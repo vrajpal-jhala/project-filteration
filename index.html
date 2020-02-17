@@ -27,8 +27,6 @@
           <div class="filter-bar">
             <input
               type="range"
-              min="1"
-              max="200"
               step="1"
               value="200"
               class=""
@@ -46,8 +44,6 @@
           <div class="filter-bar">
             <input
               type="range"
-              min="1"
-              max="10"
               step="1"
               value="10"
               class=""
@@ -65,8 +61,6 @@
           <div class="filter-bar">
             <input
               type="range"
-              min="1"
-              max="95"
               step="1"
               value="95"
               class=""
@@ -107,6 +101,22 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-4 offset-md-4">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              name="searchProject"
+              id="searchProject"
+              placeholder="Search project by name..." oninput="applyFilters()"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" onclick="clearSearch()"><span class="fas fa-times"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row my-5">
         <div class="col">
           <table id="projectTable" class="table table-borderless">
@@ -141,11 +151,7 @@
             <p id="alertMessage">Modal body text goes here.</p>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-dismiss="modal"
-            >
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
               OK
             </button>
           </div>
