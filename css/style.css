@@ -25,3 +25,7 @@ input[type=range]::-webkit-slider-runnable-track {
   background: #b9b1ff;
   border-radius: 15px;
 }
+
+span .fas{
+  cursor: pointer;
+}
