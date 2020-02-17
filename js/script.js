@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function applyFilters() {
+    var noResults = true;
     showFilterBarValues();
     tableBody.innerHTML = "";
     var projects = JSON.parse(data).projects;
@@ -35,6 +36,7 @@ function applyFilters() {
     for (project of projects) {
         if (Number(areaFilterBar.value) >= project.projectArea && Number(ageFilterBar.value) >= project.projectAge && Number(priceFilterBar.value) >= project.projectPrice &&
             (project.projectCategory == (onlyResidential || both ? "Residential" : "") || project.projectCategory == (onlyCommercial || both ? "Commercial" : ""))) {
+            noResults = false;
             var newRow = tableBody.insertRow();
             var newCell = newRow.insertCell();
             newCell.innerHTML = project.projectName;
@@ -52,4 +54,12 @@ function applyFilters() {
             newCell.innerHTML = project.projectCategory;
         }
     }
+
+    if (noResults) {
+        var newRow = tableBody.insertRow();
+        var newCell = newRow.insertCell();
+        newCell.colSpan = 5;
+        newCell.innerHTML = "<h4 class='text-center my-5'>No Results</h4>";
+    }
+
 }
