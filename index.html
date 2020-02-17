@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Filteration</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row my-5">
+        <div class="col text-center">
+          <div class="h1">Project Filteration</div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-md">
+          <div class="h5">Area (SqFt)</div>
+          <div class="filter-bar">
+            <input
+              type="range"
+              min="1"
+              max="200"
+              step="1"
+              value="200"
+              class="form-control"
+              name="areaFilterBar"
+              id="areaFilterBar"
+            />
+          </div>
+          <div class="filter-value">
+            <label for="areaFilterBar" id="areaFilterValue">Value: </label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="h5">Age (Yrs)</div>
+          <div class="filter-bar">
+            <input
+              type="range"
+              min="1"
+              max="10"
+              step="1"
+              value="10"
+              class="form-control"
+              name="ageFilterBar"
+              id="ageFilterBar"
+            />
+          </div>
+          <div class="filter-value">
+            <label for="ageFilterBar" id="ageFilterValue">Value: </label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="h5">Price (Lac)</div>
+          <div class="filter-bar">
+            <input
+              type="range"
+              min="1"
+              max="95"
+              step="1"
+              value="95"
+              class="form-control"
+              name="priceFilterBar"
+              id="priceFilterBar"
+            />
+          </div>
+          <div class="filter-value">
+            <label for="priceFilterBar" id="priceFilterValue">Value: </label>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="h5">Category</div>
+          <div class="filter-bar">
+            <div>
+              Residential:
+              <input
+                type="checkbox"
+                class=""
+                name="categoryResidential"
+                id="categoryResidential"
+              />
+            </div>
+            <div>
+              Commercial:
+              <input
+                type="checkbox"
+                class=""
+                name="categoryCommercial"
+                id="categoryCommercial"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-5">
+        <div class="col">
+          <table id="projectTable" class="table table-borderless">
+            <thead>
+              <th>Project Name</th>
+              <th>Project Price</th>
+              <th>Project Area</th>
+              <th>Project Age</th>
+              <th>Project Category</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/script.js"></script>
+</html>
