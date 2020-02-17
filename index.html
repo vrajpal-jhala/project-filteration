@@ -26,9 +26,10 @@
               max="200"
               step="1"
               value="200"
-              class="form-control"
+              class=""
               name="areaFilterBar"
               id="areaFilterBar"
+              onchange="applyFilters()"
             />
           </div>
           <div class="filter-value">
@@ -44,9 +45,10 @@
               max="10"
               step="1"
               value="10"
-              class="form-control"
+              class=""
               name="ageFilterBar"
               id="ageFilterBar"
+              onchange="applyFilters()"
             />
           </div>
           <div class="filter-value">
@@ -62,9 +64,10 @@
               max="95"
               step="1"
               value="95"
-              class="form-control"
+              class=""
               name="priceFilterBar"
               id="priceFilterBar"
+              onchange="applyFilters()"
             />
           </div>
           <div class="filter-value">
@@ -73,23 +76,27 @@
         </div>
         <div class="col-md">
           <div class="h5">Category</div>
-          <div class="filter-bar">
+          <div class="my-4">
             <div>
-              Residential:
+              <label for="categoryResidential">Residential:</label>
               <input
                 type="checkbox"
                 class=""
+                value="residential"
                 name="categoryResidential"
                 id="categoryResidential"
+                onchange="applyFilters()"
               />
             </div>
             <div>
-              Commercial:
+              <label for="categoryCommercial">Commercial:</label>
               <input
                 type="checkbox"
                 class=""
+                value="commercial"
                 name="categoryCommercial"
                 id="categoryCommercial"
+                onchange="applyFilters()"
               />
             </div>
           </div>
