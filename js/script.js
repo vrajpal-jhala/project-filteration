@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("projectTable").onclick = function (e) {
         var column = e.target;
-        if (e.target.tagName == "TD") {
+        if (e.target.tagName == "TD" && !e.target.querySelector("span")) {
             var row = column.parentNode;
             var rowNo = row.querySelector("span").getAttribute("data-row");
             var columnNo = Array.from(row.querySelectorAll("td")).findIndex(column => column == e.target);
@@ -113,14 +113,12 @@ function applyFilters() {
     var onlyCommercial = categoryCommercial.checked;
     var both = onlyResidential == onlyCommercial;
 
-    var searchPattern = searchBar.value == "" ? "[\s\S]" : searchBar.value;
-
     for (project of projects) {
         setFilterBarRange(project);
 
         if (Number(areaFilterBar.value) >= project.projectArea && Number(ageFilterBar.value) >= project.projectAge && Number(priceFilterBar.value) >= project.projectPrice &&
             (project.projectCategory == (onlyResidential || both ? "Residential" : "") || project.projectCategory == (onlyCommercial || both ? "Commercial" : ""))
-            && project.projectName.search(searchPattern)) {
+            && project.projectName.toLowerCase().includes(searchBar.value.toLowerCase())) {
 
             noResults = false;
             var newRow = tableBody.insertRow();
